@@ -99,21 +99,9 @@ npm run dev
 Feel free to fork this repository and submit pull requests with improvements.
 
 
-## Challenge 2: Database Query Optimizatio
+## Challenge 2: Database Query Optimization
 
-### Objective
-Write optimized SQL/NoSQL queries to retrieve product data efficiently.
-
-Requirements
-SQL Query: (Assuming PostgreSQL)
-
-Write a query to fetch products with a price between $50 and $200, ordered by price (ascending), with pagination (10 products per page).
-NoSQL Query: (Assuming MongoDB)
-
-Write a query to retrieve products by category (e.g., "Electronics"), sorted by price in descending order. Limit the result to 5 products per page.
-Optimization:
-
-How would you optimize the queries for high traffic scenarios (e.g., indexing, caching)?
+# Answers for Queries in `Challenge 2 - Database Queries` in the root Directory
 
 ---
 Made with ❤️ by Eyad Ayman
