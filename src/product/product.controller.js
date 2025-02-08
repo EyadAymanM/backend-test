@@ -19,3 +19,13 @@ export const getProducts = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 }
+
+export const getProductById = async (req, res) => {
+  try {
+    const product = await productModel.findById(req.params.id)
+    if (!product) return res.status(404).json({ message: "No product found with Provided Id" })
+    res.json({ message: "Success", data: product })
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+}

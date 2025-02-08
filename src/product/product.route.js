@@ -1,9 +1,9 @@
 import { Router } from "express";
 import { validateToken } from "../validators/auth.validator.js";
 import { authorization } from "../middleware/authorization.js";
-import { addProduct, getProducts } from "./product.controller.js";
+import { addProduct, getProductById, getProducts } from "./product.controller.js";
 import { authentication } from "../middleware/authentication.js";
-import { validateGetProducts, validateProduct } from "../validators/product.validator.js";
+import { validateGetProducts, validateProduct, validateProductById } from "../validators/product.validator.js";
 
 const router = Router();
 
@@ -14,7 +14,7 @@ router.post('/', validateToken, authorization, authentication('admin'), validate
 router.get('/', validateGetProducts, getProducts);
 
 //Get a single product by its ID
-// router.get();
+router.get('/:id', validateProductById, getProductById);
 
 //Update a product
 // router.put();

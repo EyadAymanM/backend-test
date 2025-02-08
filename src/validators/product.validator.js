@@ -1,4 +1,5 @@
-import { body, query, validationResult } from "express-validator";
+import { body, param, query, validationResult } from "express-validator";
+import { isValidObjectId } from "mongoose";
 
 export const validateProduct = [
 
@@ -39,4 +40,17 @@ export const validateGetProducts = [
     next()
   },
   
+]
+
+export const validateProductById = [
+  param('id')
+    .custom(value => isValidObjectId(value)).withMessage("Provide MongoID"),
+  (req, res, next) => {
+    const errors = validationResult(req);
+    
+    if (!errors.isEmpty()) {
+      return res.status(404).json({ message: "not a Valid Id", errors: errors.array() })
+    }
+    next()
+  },
 ]
