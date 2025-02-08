@@ -25,5 +25,14 @@ app.listen(PORT, () => {
 
 app.use(express.json())
 
+//middleware to prevent server form crashing if the body had Invalid format
+app.use((err, req, res, next) => {
+  if (err instanceof SyntaxError && err.status === 400 && "body" in err) {
+    return res.status(400).json({ error: "Invalid JSON format" });
+  }
+  next();
+});
+
+
 app.use('/auth', authRouter)
 app.use('/products', productsRouter)
