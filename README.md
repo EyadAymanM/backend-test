@@ -101,7 +101,7 @@ Feel free to fork this repository and submit pull requests with improvements.
 
 ## Challenge 2: Database Query Optimization
 
-# Answers for Queries in `Challenge 2 - Database Queries` in the root Directory
+Answers for Queries in `Challenge 2 - Database Queries` in the root Directory
 
 ---
 Made with ❤️ by Eyad Ayman
