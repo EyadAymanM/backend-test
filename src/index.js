@@ -1,6 +1,8 @@
 import express from "express";
-import { config } from "dotenv";
 import mongoose from "mongoose";
+import { config } from "dotenv";
+import authRouter from "./auth/auth.route.js";
+import productsRouter from "./product/product.route.js";
 
 config();
 
@@ -21,6 +23,7 @@ app.listen(PORT, () => {
   console.log(`Server is Listening on Port: ${PORT}`);
 });
 
-app.get("/", (req, res) => {
-  res.send("Hello world ");
-});
+app.use(express.json())
+
+app.use('/auth', authRouter)
+app.use('/products', productsRouter)
