@@ -7,7 +7,7 @@ import productsRouter from "./product/product.route.js";
 config();
 
 mongoose
-  .connect(process.env.MONGO_URI)
+  .connect(process.env.MONGO_URI || "mongodb://localhost:27017/mydatabase")
   .then(() => {
     console.log("connected to the Database");
   })
